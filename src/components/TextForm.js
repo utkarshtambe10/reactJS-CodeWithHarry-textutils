@@ -1,21 +1,24 @@
 import React, { useState } from 'react'
 
-export default function TextForm(props) {
+function TextForm(props) {
     const [text, setText] = useState('');  //state
 
     const handleUpClick = () => {
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Converted to UPPERCASE!", "Success");
     }
 
     const handleLoClick = () => {
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Converted to lowercase!", "Success");
     }
 
     const handleClear = () => {
         let newText = ' ';
         setText(newText);
+        props.showAlert("Text is cleared!", "Danger");
     }
     
     //credits: A
@@ -23,12 +26,14 @@ export default function TextForm(props) {
         let text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert("Text is copies to clipboard!", "Caution");
     }
 
     //credits: coding wala
     const handleExtraSpaces = () => {
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "));
+        props.showAlert("Extra spaces Removed!", "Success");
 
     }
 
@@ -61,3 +66,5 @@ export default function TextForm(props) {
         </>
     )
 }
+
+export default TextForm;
