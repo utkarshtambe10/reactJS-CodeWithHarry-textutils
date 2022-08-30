@@ -6,7 +6,6 @@ import About from './components/About';
 import Alert from './components/Alert';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
   Link
 } from "react-router-dom";
@@ -48,14 +47,10 @@ export default function App() {
         <div className="container my-3">
           {/* /users --> Component1
               /users/home --> --> Component2 */}
-          <Switch>
-            <Route exact path="/about">
-              <About/>
-            </Route>
-            <Route exact path="/">
-              <TextForm showAlert={showAlert} heading="Enter the text here to analyze" mode={mode} />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route exact path="/about" element={<About/>}/>
+            <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text here to analyze" mode={mode} />}/>
+          </Routes>
         </div>
       </Router>
     </>
