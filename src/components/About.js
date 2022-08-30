@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function About() {
+export default function About() {
 
     const [myStyle, setMyStyle] = useState({
         color: 'black',
@@ -82,4 +82,4 @@ function About() {
     )
 }
 
-export default About;
+//export default About;

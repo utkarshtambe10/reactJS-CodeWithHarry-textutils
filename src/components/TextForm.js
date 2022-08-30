@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function TextForm(props) {
+export default function TextForm(props) {
     const [text, setText] = useState('');  //state
 
     const handleUpClick = () => {
@@ -67,4 +67,4 @@ function TextForm(props) {
     )
 }
 
-export default TextForm;
+//export default TextForm;
