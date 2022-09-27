@@ -24,7 +24,19 @@ export default function App() {
     }, 1500);
   }
 
-  const toggleMode = () => {
+  const removeBodyClasses =() => {
+    document.body.classList.remove('bg-primary');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-warning');
+    document.body.classList.remove('bg-caution');
+    document.body.classList.remove('bg-secondary');
+    document.body.classList.remove('bg-light');
+    document.body.classList.remove('bg-dark');
+  }
+
+  const toggleMode = (cls) => {
+    removeBodyClasses();
+    document.body.classList.add('bg-' + cls)
     if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = '#042743';

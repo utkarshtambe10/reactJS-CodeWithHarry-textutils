@@ -18,9 +18,14 @@ export default function Navbar(props) {
                         <Link className="nav-link" to="/">{props.aboutText}</Link>
                     </li>
                 </ul>
-                <div className={`custom-control custom-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
-                    <input type="checkbox" className="custom-control-input" id="customSwitch1" onClick={props.toggleMode} />
-                    <label className="custom-control-label" htmlFor="customSwitch1">Enable Dark Mode</label>
+                <div className="d-flex">
+                    <div className="bg-primary rounded mx-2" onClick={() => {props.toggleMode('primary')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div>
+                    <div className="bg-danger rounded mx-2" onClick={() => {props.toggleMode('danger')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div>
+                    <div className="bg-warning rounded mx-2" onClick={() => {props.toggleMode('warning')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div>
+                    <div className="bg-caution rounded mx-2" onClick={() => {props.toggleMode('caution')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div>
+                    <div className="bg-secondary rounded mx-2" onClick={() => {props.toggleMode('primary')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div>
+                    <div className="bg-secondary rounded mx-2" onClick={() => {props.toggleMode('light')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div>
+                    <div className="bg-secondary rounded mx-2" onClick={() => {props.toggleMode('dark')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div>
                 </div>
             </div>
         </nav>
